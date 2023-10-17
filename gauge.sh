@@ -1,11 +1,25 @@
 #!/bin/bash
 
-# {
-#     for ((i=0; i<=100; i+=1)); do
-#         sleep 0.1
-#         echo $i
-#     done
-# }|whiptail --gauge "File loading..." --title "Loading File" 20 50 0 
+whiptail \
+--msgbox "You are accessing the personal storage space. Please login with your credentials." \
+--title "AUTHORIZED USE ONLY" \
+10 30
+
+whiptail \
+--inputbox "User:" \
+--title "Username Required" \
+8 30
+
+whiptail \
+--passwordbox "Password:" \
+--title "Password Required" \
+8 30
+
+whiptail \
+--yesno "Do you want to loading the files.  Proceed?" \
+--title "File transfer" \
+--no-button "NO!" \
+10 30
 
 
 {
@@ -64,3 +78,8 @@
     
     sleep 1
 } |whiptail --title "Loading File" --gauge "File loading..." 20 80 0
+
+whiptail \
+--msgbox "Files have been loaded into the space" \
+--title "Succeed" \
+10 30
